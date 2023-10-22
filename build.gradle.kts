@@ -15,6 +15,7 @@ dependencies {
     testImplementation(platform("org.junit:junit-bom:5.9.1"))
     testImplementation ("org.mockito:mockito-inline:4.9.0")
     testImplementation("org.junit.jupiter:junit-jupiter")
+    testImplementation("org.mockito:mockito-inline:4.9.0")
 }
 
 sourceSets {
@@ -34,8 +35,8 @@ configurations {
 }
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_18
-    targetCompatibility = JavaVersion.VERSION_18
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
 }
 
 tasks.withType<JavaCompile> {
