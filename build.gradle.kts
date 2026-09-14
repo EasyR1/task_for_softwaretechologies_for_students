@@ -5,8 +5,6 @@ plugins {
 group = "org.example"
 version = "1.0-SNAPSHOT"
 
-apply(plugin = "java")
-
 repositories {
     mavenCentral()
 }
@@ -33,8 +31,9 @@ configurations {
 }
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_18
-    targetCompatibility = JavaVersion.VERSION_18
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(21))
+    }
 }
 
 tasks.withType<JavaCompile> {
