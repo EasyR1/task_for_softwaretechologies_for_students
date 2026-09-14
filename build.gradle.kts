@@ -2,10 +2,8 @@ plugins {
     id("java")
 }
 
-group = "org.learnighub.axenix"
+group = "org.softwaretechnologies"
 version = "1.0-SNAPSHOT"
-
-apply(plugin = "java")
 
 repositories {
     mavenCentral()
@@ -16,7 +14,7 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.8.1")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:5.8.1")
 
-    testImplementation("org.mockito:mockito-inline:4.9.0")
+    testImplementation ("org.mockito:mockito-core:5.16.1")
     testImplementation("nl.jqno.equalsverifier:equalsverifier:3.10.1")
 }
 
@@ -37,8 +35,9 @@ configurations {
 }
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_18
-    targetCompatibility = JavaVersion.VERSION_18
+    toolchain {
+        languageVersion.set(JavaLanguageVersion.of(21))
+    }
 }
 
 tasks.withType<JavaCompile> {
